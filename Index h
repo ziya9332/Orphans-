@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let the Orphans Rise - Support Orphans with USDT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2962ff;
+            --primary-dark: #0039cb;
+            --secondary: #ff6d00;
+            --dark: #1a237e;
+            --light: #f5f5f5;
+            --gray: #757575;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+            color: var(--white);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .logo i {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--secondary);
+        }
+        
+        .hero {
+            padding: 4rem 0;
+            background: linear-gradient(rgba(26, 35, 126, 0.8), rgba(26, 35, 126, 0.9)), url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #e65100;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .donation-section {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .donation-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 2rem;
+        }
+        
+        .donation-option {
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+            padding: 15px;
+            background-color: var(--light);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .donation-option:hover {
+            background-color: #e3f2fd;
+        }
+        
+        .donation-option.active {
+            background-color: #e3f2fd;
+            border-color: var(--primary);
+        }
+        
+        .donation-amount {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--dark);
+        }
+        
+        .donation-usdt {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .custom-amount {
+            margin-bottom: 2rem;
+        }
+        
+        .custom-amount label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .input-group {
+            display: flex;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .input-group input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .input-group select {
+            padding: 0 15px;
+            border: none;
+            border-left: 2px solid #e0e0e0;
+            background-color: var(--light);
+            font-weight: 600;
+        }
+        
+        .wallet-address {
+            background-color: var(--light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .wallet-address h3 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .address-container {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .address-container input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            font-family: monospace;
+            background-color: var(--white);
+        }
+        
+        .copy-btn {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            padding: 0 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .copy-btn:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .network-info {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .network-info strong {
+            color: var(--dark);
+        }
+        
+        .donation-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--gray);
+            font-weight: 500;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: #bdbdbd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .donation-methods {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 2rem;
+        }
+        
+        .method-card {
+            flex: 1;
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+        }
+        
+        .method-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .method-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .method-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .donation-section {
+                padding: 2rem 1.5rem;
+            }
+            
+            .address-container {
+                flex-direction: column;
+            }
+            
+            .donation-methods {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-hands-helping"></i>
+                    <span>Let the Orphans Rise</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">Our Mission</a></li>
+                        <li><a href="#donate">Donate</a></li>
+                        <li><a href="#impact">Impact</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Help Orphans Rise Through Education</h1>
+            <p>Your USDT donation provides education, shelter, and hope to orphans in Adamawa State, Nigeria. Together, we can break the cycle of poverty.</p>
+            <a href="#donate" class="btn">Donate Now</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Mission</h2>
+                <p>We're dedicated to supporting orphans and children living without access to education in Adamawa State, Nigeria</p>
+            </div>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education Support</h3>
+                    <p>We provide school fees, books, and uniforms to ensure orphans can attend school and build a better future.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Safe Shelter</h3>
+                    <p>We maintain safe living environments for orphans in Gombi, Adamawa State, providing basic necessities.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Nutrition & Health</h3>
+                    <p>We ensure proper nutrition and access to healthcare for the children in our care.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section class="section" id="donate">
+        <div class="container">
+            <div class="section-title">
+                <h2>Make a Donation</h2>
+                <p>Choose how you'd like to support our cause with USDT</p>
+            </div>
+            
+            <div class="donation-methods">
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <h3>Direct Donation</h3>
+                    <p>Send USDT directly to our wallet address below. Every contribution makes a difference in a child's life.</p>
+                    <div class="wallet-address" style="margin-top: 1.5rem;">
+                        <h4>Our USDT EVM Wallet Address:</h4>
+                        <div class="address-container">
+                            <input type="text" id="wallet-address" value="0x6360473dac0f52c47ba1cf77f0ae47f73ca00386" readonly>
+                            <button class="copy-btn" id="copy-address">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <div class="network-info">
+                            <p><strong>Network:</strong> Ethereum (ERC20)</p>
+                            <p>Please ensure you're sending USDT on the correct network</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>Copy Wallet to Donate</h3>
+                    <p>Copy our wallet address to your preferred crypto wallet and send your donation. We appreciate your support!</p>
+                    <div style="margin-top: 1.5rem;">
+                        <h4>Donation Amount (Optional):</h4>
+                        <div class="donation-options">
+                            <div class="donation-option active" data-amount="10">
+                                <div class="donation-amount">$10</div>
+                                <div class="donation-usdt">≈ 10 USDT</div>
+                            </div>
+                            <div class="donation-option" data-amount="25">
+                                <div class="donation-amount">$25</div>
+                                <div class="donation-usdt">≈ 25 USDT</div>
+                            </div>
+                            <div class="donation-option" data-amount="50">
+                                <div class="donation-amount">$50</div>
+                                <div class="donation-usdt">≈ 50 USDT</div>
+                            </div>
+                        </div>
+                        
+                        <div class="custom-amount">
+                            <label for="custom-amount">Or enter custom amount:</label>
+                            <div class="input-group">
+                                <input type="number" id="custom-amount" placeholder="Enter amount">
+                                <select id="currency">
+                                    <option value="USD">USD</option>
+                                    <option value="USDT" selected>USDT</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="donation-instructions">
+                <h3>Donation Instructions:</h3>
+                <ol>
+                    <li>Copy the wallet address above</li>
+                    <li>Open your cryptocurrency wallet (MetaMask, Trust Wallet, etc.)</li>
+                    <li>Paste the address and send USDT (ERC20 network)</li>
+                    <li>Keep the transaction hash for your records</li>
+                    <li>Optionally, email us at rockxee4u@gmail.com with your transaction details</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="section" id="impact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Impact</h2>
+                <p>See how your donations are transforming lives in Adamawa State, Nigeria</p>
+            </div>
+            <div class="donation-stats">
+                <div class="stat-card">
+                    <div class="stat-value">47</div>
+                    <div class="stat-label">Children Supported</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">28</div>
+                    <div class="stat-label">In School</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">Communities Reached</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">5</div>
+                    <div class="stat-label">Years of Service</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Let the Orphans Rise</h3>
+                    <p>We are dedicated to supporting orphans and underprivileged children in Adamawa State, Nigeria, providing education, shelter, and hope for a brighter future.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="mailto:rockxee4u@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">Our Mission</a></li>
+                        <li><a href="#donate">Donate</a></li>
+                        <li><a href="#impact">Our Impact</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> rockxee4u@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Gombi LGA, Adamawa State, Nigeria</li>
+                        <li><i class="fas fa-hand-holding-heart"></i> Registered Charity</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Let the Orphans Rise. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Donation option selection
+        const donationOptions = document.querySelectorAll('.donation-option');
+        const customAmountInput = document.getElementById('custom-amount');
+        const currencySelect = document.getElementById('currency');
+        
+        donationOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove active class from all options
+                donationOptions.forEach(opt => opt.classList.remove('active'));
+                
+                // Add active class to clicked option
+                this.classList.add('active');
+                
+                // Update custom amount input
+                const amount = this.getAttribute('data-amount');
+                customAmountInput.value = amount;
+                
+                // Update currency display
+                updateCurrencyDisplay();
+            });
+        });
+        
+        // Custom amount input
+        customAmountInput.addEventListener('input', function() {
+            // Remove active class from all options when custom amount is entered
+            donationOptions.forEach(opt => opt.classList.remove('active'));
+            
+            // Update currency display
+            updateCurrencyDisplay();
+        });
+        
+        // Currency selection change
+        currencySelect.addEventListener('change', function() {
+            updateCurrencyDisplay();
+        });
+        
+        // Function to update currency display
+        function updateCurrencyDisplay() {
+            const amount = customAmountInput.value;
+            const currency = currencySelect.value;
+            
+            if (amount) {
+                if (currency === 'USD') {
+                    // Show USDT equivalent
+                    const usdtAmount = (amount * 1).toFixed(2); // 1:1 for simplicity
+                    document.querySelectorAll('.donation-usdt').forEach(el => {
+                        const optionAmount = el.closest('.donation-option').getAttribute('data-amount');
+                        el.textContent = `≈ ${(optionAmount * 1).toFixed(0)} USDT`;
+                    });
+                } else if (currency === 'USDT') {
+                    // Show USD equivalent
+                    document.querySelectorAll('.donation-usdt').forEach(el => {
+                        const optionAmount = el.closest('.donation-option').getAttribute('data-amount');
+                        el.textContent = `≈ $${optionAmount} USD`;
+                    });
+                }
+            }
+        }
+        
+        // Copy wallet address
+        const copyButton = document.getElementById('copy-address');
+        const walletAddress = document.getElementById('wallet-address');
+        
+        copyButton.addEventListener('click', function() {
+            walletAddress.select();
+            walletAddress.setSelectionRange(0, 99999); // For mobile devices
+            
+            // Use modern Clipboard API if available
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(walletAddress.value)
+                    .then(() => {
+                        showCopyFeedback();
+                    })
+                    .catch(err => {
+                        // Fallback to execCommand
+                        fallbackCopyText();
+                    });
+            } else {
+                // Fallback for older browsers
+                fallbackCopyText();
+            }
+        });
+        
+        function fallbackCopyText() {
+            try {
+                document.execCommand('copy');
+                showCopyFeedback();
+            } catch (err) {
+                alert('Failed to copy address. Please manually select and copy.');
+            }
+        }
+        
+        function showCopyFeedback() {
+            // Change button text temporarily
+            const originalHTML = copyButton.innerHTML;
+            copyButton.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            copyButton.style.backgroundColor = '#00c853';
+            
+            setTimeout(() => {
+                copyButton.innerHTML = originalHTML;
+                copyButton.style.backgroundColor = '';
+            }, 2000);
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Initialize currency display on page load
+        updateCurrencyDisplay();
+    </script>
+</body>
+</html
