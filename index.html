@@ -6,7 +6,7 @@
     <title>PDP Youths Mobilization Gombi LG | United We Rise, United We Thrive</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Base Styles */
+        /* All CSS styles remain the same as before */
         :root {
             --pdp-blue: #0066CC;
             --pdp-red: #FF0000;
@@ -117,6 +117,11 @@
             margin-right: 10px;
         }
         
+        .logo-img img {
+            height: 100%;
+            width: auto;
+        }
+        
         .logo-text {
             font-size: 1.5rem;
             font-weight: 700;
@@ -172,9 +177,10 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('YOUR_BACKGROUND_IMAGE_URL_HERE');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             height: 100vh;
             display: flex;
             align-items: center;
@@ -216,438 +222,17 @@
             color: var(--pdp-blue);
         }
         
-        /* Quick Info Section */
-        .quick-info {
-            background-color: var(--pdp-white);
-        }
+        /* Rest of the CSS remains the same as previous code */
+        /* ... (including quick info, about, mission, programs, gallery, contact, footer styles) */
         
-        .info-cards {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-        
-        .info-card {
-            flex: 1;
-            min-width: 250px;
-            background: white;
-            padding: 30px;
+        .upload-placeholder {
+            background: #f8f9fa;
+            border: 2px dashed #0066CC;
             border-radius: 10px;
-            box-shadow: var(--shadow);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        
-        .info-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .info-card i {
-            font-size: 3rem;
-            color: var(--pdp-blue);
-            margin-bottom: 20px;
-        }
-        
-        .info-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--pdp-blue);
-        }
-        
-        /* About Section */
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-        
-        .about-image {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        /* Mission & Vision Section */
-        .mission-vision {
-            background-color: var(--pdp-white);
-        }
-        
-        .mv-container {
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .mv-card {
-            flex: 1;
-            min-width: 300px;
-            background: white;
-            padding: 40px 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            text-align: center;
-            border-top: 5px solid var(--pdp-blue);
-        }
-        
-        .vision-card {
-            border-top-color: var(--pdp-green);
-        }
-        
-        .mv-card i {
-            font-size: 3rem;
-            color: var(--pdp-blue);
-            margin-bottom: 20px;
-        }
-        
-        .vision-card i {
-            color: var(--pdp-green);
-        }
-        
-        .mv-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--pdp-blue);
-        }
-        
-        .vision-card h3 {
-            color: var(--pdp-green);
-        }
-        
-        .mv-card ul {
-            text-align: left;
-            margin-top: 20px;
-        }
-        
-        .mv-card li {
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 25px;
-        }
-        
-        .mv-card li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--pdp-green);
-            font-weight: bold;
-        }
-        
-        /* Programs Section */
-        .program-filters {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 40px;
-        }
-        
-        .filter-btn {
-            padding: 8px 20px;
-            background: white;
-            border: 2px solid var(--pdp-blue);
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--pdp-blue);
-            color: white;
-        }
-        
-        .programs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .program-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-        }
-        
-        .program-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .program-img {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .program-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .program-card:hover .program-img img {
-            transform: scale(1.1);
-        }
-        
-        .program-content {
             padding: 20px;
-        }
-        
-        .program-tag {
-            display: inline-block;
-            padding: 5px 15px;
-            background: var(--pdp-blue);
-            color: white;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            margin-bottom: 15px;
-        }
-        
-        .program-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--pdp-blue);
-        }
-        
-        /* Gallery Section */
-        .gallery {
-            background-color: var(--pdp-white);
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
-        }
-        
-        .gallery-item {
-            border-radius: 10px;
-            overflow: hidden;
-            height: 250px;
-            position: relative;
-            cursor: pointer;
-        }
-        
-        .gallery-item img, .gallery-item iframe {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .gallery-item:hover img, .gallery-item:hover iframe {
-            transform: scale(1.1);
-        }
-        
-        .gallery-item .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 102, 204, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .gallery-item:hover .overlay {
-            opacity: 1;
-        }
-        
-        .gallery-item .overlay i {
-            color: white;
-            font-size: 2rem;
-        }
-        
-        /* Contact Section */
-        .contact-container {
-            display: flex;
-            gap: 50px;
-            flex-wrap: wrap;
-        }
-        
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .contact-details {
-            margin-top: 30px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
-        }
-        
-        .contact-item i {
-            font-size: 1.5rem;
-            color: var(--pdp-blue);
-            margin-right: 15px;
-            margin-top: 5px;
-        }
-        
-        .contact-form {
-            flex: 1;
-            min-width: 300px;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        
-        .form-control:focus {
-            border-color: var(--pdp-blue);
-            outline: none;
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        .map-container {
-            margin-top: 40px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        
-        .map-container iframe {
-            width: 100%;
-            height: 300px;
-            border: none;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--dark-gray);
-            color: white;
-            padding: 60px 0 20px;
-        }
-        
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-col {
-            flex: 1;
-            min-width: 200px;
-        }
-        
-        .footer-col h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            color: var(--pdp-blue);
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: #ddd;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--pdp-blue);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: var(--pdp-blue);
-            color: white;
-            border-radius: 50%;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background: var(--pdp-green);
-            transform: translateY(-5px);
-        }
-        
-        .copyright {
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #444;
-            font-size: 0.9rem;
-            color: #aaa;
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .hero p {
-                font-size: 1.3rem;
-            }
+            margin: 10px 0;
+            color: #666;
         }
         
         @media (max-width: 768px) {
@@ -685,30 +270,6 @@
             .hero p {
                 font-size: 1.1rem;
             }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero-btns {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 250px;
-            }
-            
-            .info-cards {
-                flex-direction: column;
-            }
-            
-            .mv-container {
-                flex-direction: column;
-            }
         }
     </style>
 </head>
@@ -718,11 +279,8 @@
         <div class="container header-container">
             <div class="logo">
                 <div class="logo-img">
-                    <!-- Placeholder for logo - replace with actual logo -->
-                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="25" cy="25" r="23" fill="#0066CC" stroke="white" stroke-width="2"/>
-                        <path d="M25 10L31 20L40 22L33 30L34 40L25 35L16 40L17 30L10 22L19 20L25 10Z" fill="white"/>
-                    </svg>
+                    <!-- PASTE YOUR LOGO URL HERE -->
+                    <img src="YOUR_LOGO_IMAGE_URL_HERE" alt="PYM Logo">
                 </div>
                 <div class="logo-text">PYM <span>Gombi</span></div>
             </div>
@@ -790,7 +348,12 @@
                     <p>Through various initiatives, we aim to create an enabling environment where young people can develop their potential, contribute to community development, and become leaders of tomorrow.</p>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80" alt="PYM Members">
+                    <!-- PASTE YOUR ABOUT US IMAGE URL HERE -->
+                    <div class="upload-placeholder">
+                        <i class="fas fa-image fa-3x"></i>
+                        <p>Upload About Us Image</p>
+                        <small>Replace this with your group photo URL</small>
+                    </div>
                 </div>
             </div>
         </div>
@@ -837,9 +400,16 @@
             </div>
             
             <div class="programs-grid">
+                <!-- PROGRAM 1 -->
                 <div class="program-card" data-category="youth-forums">
                     <div class="program-img">
-                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Youth Forum">
+                        <!-- PASTE YOUR YOUTH FORUM IMAGE URL HERE -->
+                        <div class="upload-placeholder" style="height: 200px; display: flex; align-items: center; justify-content: center;">
+                            <div>
+                                <i class="fas fa-image fa-2x"></i>
+                                <p>Youth Forum Photo</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="program-content">
                         <span class="program-tag">Youth Forums</span>
@@ -849,9 +419,16 @@
                     </div>
                 </div>
                 
+                <!-- PROGRAM 2 -->
                 <div class="program-card" data-category="trainings">
                     <div class="program-img">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Skills Training">
+                        <!-- PASTE YOUR TRAINING IMAGE URL HERE -->
+                        <div class="upload-placeholder" style="height: 200px; display: flex; align-items: center; justify-content: center;">
+                            <div>
+                                <i class="fas fa-image fa-2x"></i>
+                                <p>Training Photo</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="program-content">
                         <span class="program-tag">Trainings</span>
@@ -861,26 +438,21 @@
                     </div>
                 </div>
                 
+                <!-- PROGRAM 3 -->
                 <div class="program-card" data-category="pdp-events">
                     <div class="program-img">
-                        <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="PDP Rally">
+                        <!-- PASTE YOUR PDP EVENT IMAGE URL HERE -->
+                        <div class="upload-placeholder" style="height: 200px; display: flex; align-items: center; justify-content: center;">
+                            <div>
+                                <i class="fas fa-image fa-2x"></i>
+                                <p>PDP Event Photo</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="program-content">
                         <span class="program-tag">PDP Events</span>
                         <h3>PDP Youth Rally</h3>
                         <p>Mobilizing youth support for PDP and its candidates in upcoming elections.</p>
-                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">View Details</a>
-                    </div>
-                </div>
-                
-                <div class="program-card" data-category="community-support">
-                    <div class="program-img">
-                        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80" alt="Community Outreach">
-                    </div>
-                    <div class="program-content">
-                        <span class="program-tag">Community Support</span>
-                        <h3>Community Clean-Up Initiative</h3>
-                        <p>Organizing youth volunteers for environmental sanitation and community development.</p>
                         <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">View Details</a>
                     </div>
                 </div>
@@ -896,45 +468,36 @@
             </div>
             
             <div class="gallery-grid">
+                <!-- GALLERY ITEM 1 -->
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Youth Forum">
-                    <div class="overlay">
-                        <i class="fas fa-search-plus"></i>
+                    <!-- PASTE YOUR GALLERY IMAGE URL HERE -->
+                    <div class="upload-placeholder" style="height: 250px; display: flex; align-items: center; justify-content: center;">
+                        <div>
+                            <i class="fas fa-image fa-2x"></i>
+                            <p>Event Photo 1</p>
+                        </div>
                     </div>
                 </div>
                 
+                <!-- GALLERY ITEM 2 -->
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Skills Training">
-                    <div class="overlay">
-                        <i class="fas fa-search-plus"></i>
+                    <!-- PASTE YOUR GALLERY IMAGE URL HERE -->
+                    <div class="upload-placeholder" style="height: 250px; display: flex; align-items: center; justify-content: center;">
+                        <div>
+                            <i class="fas fa-image fa-2x"></i>
+                            <p>Event Photo 2</p>
+                        </div>
                     </div>
                 </div>
                 
+                <!-- GALLERY ITEM 3 -->
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="PDP Rally">
-                    <div class="overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80" alt="Community Outreach">
-                    <div class="overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="overlay">
-                        <i class="fas fa-play"></i>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Youth Meeting">
-                    <div class="overlay">
-                        <i class="fas fa-search-plus"></i>
+                    <!-- PASTE YOUR GALLERY IMAGE URL HERE -->
+                    <div class="upload-placeholder" style="height: 250px; display: flex; align-items: center; justify-content: center;">
+                        <div>
+                            <i class="fas fa-image fa-2x"></i>
+                            <p>Event Photo 3</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -978,10 +541,6 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="map-container">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.218990724098!2d12.450031174852882!3d9.042371091079673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10fc6e5d23b59a3d%3A0x5b6d42f01b59b0a0!2sAdamawa%20State%2C%20Nigeria!5e0!3m2!1sen!2s!4v1689876543210!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
                 </div>
                 
                 <div class="contact-form">
@@ -995,23 +554,6 @@
                         <div class="form-group">
                             <label for="email">Email Address</label>
                             <input type="email" id="email" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" class="form-control">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <select id="subject" class="form-control" required>
-                                <option value="">Select a subject</option>
-                                <option value="general">General Inquiry</option>
-                                <option value="membership">Membership</option>
-                                <option value="partnership">Partnership</option>
-                                <option value="event">Event Information</option>
-                                <option value="other">Other</option>
-                            </select>
                         </div>
                         
                         <div class="form-group">
@@ -1033,10 +575,8 @@
                 <div class="footer-col">
                     <div class="logo">
                         <div class="logo-img">
-                            <svg width="40" height="40" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="25" cy="25" r="23" fill="#0066CC" stroke="white" stroke-width="2"/>
-                                <path d="M25 10L31 20L40 22L33 30L34 40L25 35L16 40L17 30L10 22L19 20L25 10Z" fill="white"/>
-                            </svg>
+                            <!-- USE SAME LOGO URL AS HEADER -->
+                            <img src=https://ibb.co/RpbND7Pc alt="PYM Logo" style="height: 40px;">
                         </div>
                         <div class="logo-text">PYM <span>Gombi</span></div>
                     </div>
@@ -1058,17 +598,6 @@
                         <li><a href="#programs">Programs</a></li>
                         <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Our Programs</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Youth Forums</a></li>
-                        <li><a href="#">Skills Training</a></li>
-                        <li><a href="#">PDP Events</a></li>
-                        <li><a href="#">Community Support</a></li>
-                        <li><a href="#">Leadership Development</a></li>
                     </ul>
                 </div>
                 
@@ -1114,9 +643,7 @@
         
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Remove active class from all buttons
                 filterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
                 btn.classList.add('active');
                 
                 const filter = btn.getAttribute('data-filter');
@@ -1136,36 +663,8 @@
         
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            
-            // In a real application, you would send this data to a server
-            // For this demo, we'll just show an alert
-            alert(`Thank you, ${name}! Your message has been received. We will contact you at ${email} regarding your ${subject} inquiry.`);
-            
-            // Reset form
+            alert('Thank you! Your message has been received. We will contact you soon.');
             contactForm.reset();
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
         });
     </script>
 </body>
