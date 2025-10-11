@@ -1,1276 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDP Youths Mobilization Gombi PYM | United We Rise, United We Thrive</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Base Styles */
-        :root {
-            --pdp-blue: #0066CC;
-            --pdp-red: #FF0000;
-            --pdp-green: #008000;
-            --pdp-white: #FFFFFF;
-            --pdp-yellow: #FFD700;
-            --light-gray: #f5f5f5;
-            --dark-gray: #333333;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            line-height: 1.6;
-            color: var(--dark-gray);
-            background-color: var(--light-gray);
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--pdp-blue);
-            margin-bottom: 15px;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(to right, var(--pdp-blue), var(--pdp-green));
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: var(--pdp-blue);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-        
-        .btn:hover {
-            background: var(--pdp-green);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow);
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: var(--pdp-white);
-            box-shadow: var(--shadow);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo-img {
-            height: 60px;
-            width: 60px;
-            margin-right: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: white;
-            border-radius: 50%;
-            padding: 5px;
-            box-shadow: var(--shadow);
-        }
-        
-        .logo-text {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--pdp-blue);
-            line-height: 1.2;
-        }
-        
-        .logo-text span {
-            color: var(--pdp-green);
-            display: block;
-            font-size: 1rem;
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-menu li {
-            margin-left: 30px;
-        }
-        
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--dark-gray);
-            font-weight: 600;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-        
-        .nav-menu a:hover {
-            color: var(--pdp-blue);
-        }
-        
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--pdp-blue);
-            bottom: -5px;
-            left: 0;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-menu a:hover::after {
-            width: 100%;
-        }
-        
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: 
-                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M50 10 L90 50 L50 90 L10 50 Z" fill="%230066CC" stroke="%23FFFFFF" stroke-width="2"/><circle cx="50" cy="50" r="30" fill="%23FF0000"/><circle cx="50" cy="50" r="20" fill="%23008000"/><circle cx="50" cy="50" r="10" fill="%23FFD700"/></svg>');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: white;
-            margin-top: 80px;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-        }
-        
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-        }
-        
-        .hero-btns {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            border: 2px solid white;
-        }
-        
-        .btn-secondary:hover {
-            background: white;
-            color: var(--pdp-blue);
-        }
-        
-        /* Quick Info Section */
-        .quick-info {
-            background-color: var(--pdp-white);
-        }
-        
-        .info-cards {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-        
-        .info-card {
-            flex: 1;
-            min-width: 250px;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        
-        .info-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .info-card i {
-            font-size: 3rem;
-            color: var(--pdp-blue);
-            margin-bottom: 20px;
-        }
-        
-        .info-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--pdp-blue);
-        }
-        
-        /* About Section */
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-        
-        .about-image {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        /* Mission & Vision Section */
-        .mission-vision {
-            background-color: var(--pdp-white);
-        }
-        
-        .mv-container {
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .mv-card {
-            flex: 1;
-            min-width: 300px;
-            background: white;
-            padding: 40px 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            text-align: center;
-            border-top: 5px solid var(--pdp-blue);
-        }
-        
-        .vision-card {
-            border-top-color: var(--pdp-green);
-        }
-        
-        .mv-card i {
-            font-size: 3rem;
-            color: var(--pdp-blue);
-            margin-bottom: 20px;
-        }
-        
-        .vision-card i {
-            color: var(--pdp-green);
-        }
-        
-        .mv-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--pdp-blue);
-        }
-        
-        .vision-card h3 {
-            color: var(--pdp-green);
-        }
-        
-        .mv-card ul {
-            text-align: left;
-            margin-top: 20px;
-        }
-        
-        .mv-card li {
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 25px;
-        }
-        
-        .mv-card li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--pdp-green);
-            font-weight: bold;
-        }
-        
-        /* Programs Section */
-        .program-filters {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 40px;
-        }
-        
-        .filter-btn {
-            padding: 8px 20px;
-            background: white;
-            border: 2px solid var(--pdp-blue);
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--pdp-blue);
-            color: white;
-        }
-        
-        .programs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .program-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-        }
-        
-        .program-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .program-img {
-            height: 200px;
-            overflow: hidden;
-            background: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-        }
-        
-        .program-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .program-card:hover .program-img img {
-            transform: scale(1.1);
-        }
-        
-        .program-content {
-            padding: 20px;
-        }
-        
-        .program-tag {
-            display: inline-block;
-            padding: 5px 15px;
-            background: var(--pdp-blue);
-            color: white;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            margin-bottom: 15px;
-        }
-        
-        .program-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--pdp-blue);
-        }
-        
-        /* Admin Upload Section */
-        .admin-section {
-            background: var(--pdp-white);
-            border-top: 5px solid var(--pdp-green);
-            margin-top: 50px;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-        
-        .admin-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        
-        .form-control:focus {
-            border-color: var(--pdp-blue);
-            outline: none;
-        }
-        
-        textarea.form-control {
-            min-height: 100px;
-            resize: vertical;
-        }
-        
-        /* Gallery Section */
-        .gallery {
-            background-color: var(--pdp-white);
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
-        }
-        
-        .gallery-item {
-            border-radius: 10px;
-            overflow: hidden;
-            height: 250px;
-            position: relative;
-            cursor: pointer;
-            background: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-        }
-        
-        .gallery-item img, .gallery-item iframe {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .gallery-item:hover img, .gallery-item:hover iframe {
-            transform: scale(1.1);
-        }
-        
-        .gallery-item .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 102, 204, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .gallery-item:hover .overlay {
-            opacity: 1;
-        }
-        
-        .gallery-item .overlay i {
-            color: white;
-            font-size: 2rem;
-        }
-        
-        /* Contact Section */
-        .contact-container {
-            display: flex;
-            gap: 50px;
-            flex-wrap: wrap;
-        }
-        
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .contact-details {
-            margin-top: 30px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
-        }
-        
-        .contact-item i {
-            font-size: 1.5rem;
-            color: var(--pdp-blue);
-            margin-right: 15px;
-            margin-top: 5px;
-        }
-        
-        .contact-form {
-            flex: 1;
-            min-width: 300px;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-        
-        .map-container {
-            margin-top: 40px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        
-        .map-container iframe {
-            width: 100%;
-            height: 300px;
-            border: none;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--dark-gray);
-            color: white;
-            padding: 60px 0 20px;
-        }
-        
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-col {
-            flex: 1;
-            min-width: 200px;
-        }
-        
-        .footer-col h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            color: var(--pdp-blue);
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: #ddd;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--pdp-blue);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: var(--pdp-blue);
-            color: white;
-            border-radius: 50%;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background: var(--pdp-green);
-            transform: translateY(-5px);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #444;
-            font-size: 0.9rem;
-            color: #aaa;
-        }
-        
-        /* Custom Logo Styles */
-        .custom-logo {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .eagle {
-            font-size: 24px;
-            color: #0066CC;
-            margin-bottom: 5px;
-        }
-        
-        .handshake {
-            font-size: 18px;
-            color: #008000;
-            margin-bottom: 5px;
-        }
-        
-        .pym-text {
-            font-size: 14px;
-            font-weight: bold;
-            color: #FF0000;
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .hero p {
-                font-size: 1.3rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-            
-            .nav-menu {
-                position: fixed;
-                top: 80px;
-                right: -100%;
-                background: white;
-                width: 80%;
-                height: calc(100vh - 80px);
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                padding-top: 50px;
-                transition: right 0.3s ease;
-                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-            }
-            
-            .nav-menu.active {
-                right: 0;
-            }
-            
-            .nav-menu li {
-                margin: 15px 0;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero-btns {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 250px;
-            }
-            
-            .info-cards {
-                flex-direction: column;
-            }
-            
-            .mv-container {
-                flex-direction: column;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDP Youths Mobilization – Gombi LG</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <div class="logo">
-                <div class="logo-img">
-                    <!-- Custom Logo with Eagle and Handshake -->
-                    <div class="custom-logo">
-                        <div class="eagle">
-                            <i class="fas fa-dove"></i> <!-- Eagle symbol -->
-                        </div>
-                        <div class="handshake">
-                            <i class="fas fa-handshake"></i> <!-- Handshake symbol -->
-                        </div>
-                        <div class="pym-text">PYM</div>
-                    </div>
-                </div>
-                <div class="logo-text">PDP YOUTHS MOBILIZATION<br><span>GOMBI PYM</span></div>
-            </div>
-            
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
-            
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#mission">Mission & Vision</a></li>
-                <li><a href="#programs">Programs</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </header>
+<body class="bg-gray-100 font-sans text-gray-800">
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container hero-content">
-            <h1>United We Rise, United We Thrive</h1>
-            <p>Empowering the Youth of Gombi for a Brighter Future</p>
-            <div class="hero-btns">
-                <a href="#programs" class="btn">Our Programs</a>
-                <a href="#contact" class="btn btn-secondary">Join Us</a>
-            </div>
-        </div>
-    </section>
+  <!-- Header -->
+  <header class="bg-green-700 text-white py-6 text-center">
+    <img src="YOUR_LOGO_PATH_HERE.png" alt="PDP Youths Mobilization Gombi LG" class="mx-auto h-32 mb-2">
+    <h1 class="text-3xl font-bold">PDP Youths Mobilization – Gombi Local Government</h1>
+    <p class="italic mt-2">“United We Rise, United We Thrive”</p>
+  </header>
 
-    <!-- Quick Info Section -->
-    <section class="quick-info">
-        <div class="container">
-            <div class="info-cards">
-                <div class="info-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Mobilize</h3>
-                    <p>We bring young people together for a common cause.</p>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-hands-helping"></i>
-                    <h3>Empower</h3>
-                    <p>We provide skills, training, and opportunities for growth.</p>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Impact</h3>
-                    <p>We drive positive change in our local community.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Aims & Objectives -->
+  <section class="max-w-4xl mx-auto p-6 bg-white mt-8 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold text-green-700 mb-4">Aims and Objectives</h2>
+    <ul class="list-disc ml-6 space-y-2">
+      <li>To mobilize the youths of Gombi Local Government towards active political participation.</li>
+      <li>To promote unity, peace, and progress within PDP youths.</li>
+      <li>To ensure inclusion and empowerment of young people in political and community development.</li>
+      <li>To uphold transparency, accountability, and discipline in leadership.</li>
+      <li>To support the vision and mission of the People’s Democratic Party (PDP).</li>
+      <li>To organize developmental programs, sensitizations, and grassroots campaigns.</li>
+    </ul>
+  </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Us</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p><strong>PDP Youths Mobilization Gombi PYM</strong> is a youth-driven platform under the People's Democratic Party (PDP), committed to empowering young people through unity, innovation, and active participation.</p>
-                    <p>We believe that together, <strong>United We Rise, United We Thrive</strong>. Our organization serves as a bridge between the youth and the political process, ensuring that young voices are heard and valued in decision-making.</p>
-                    <p>Through various initiatives, we aim to create an enabling environment where young people can develop their potential, contribute to community development, and become leaders of tomorrow.</p>
-                </div>
-                <div class="about-image">
-                    <div class="program-img" style="height: 300px;">
-                        <i class="fas fa-image fa-3x"></i>
-                        <p>Upload Group Photo Here</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Executives Section -->
+  <section class="max-w-6xl mx-auto p-6 mt-10">
+    <h2 class="text-2xl font-bold text-center text-green-700 mb-8">Our Executive Members</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
 
-    <!-- Mission & Vision Section -->
-    <section class="mission-vision" id="mission">
-        <div class="container">
-            <div class="section-title">
-                <h2>Mission & Vision</h2>
-            </div>
-            <div class="mv-container">
-                <div class="mv-card">
-                    <i class="fas fa-bullseye"></i>
-                    <h3>Our Mission</h3>
-                    <ul>
-                        <li>To mobilize and empower youths for political, social, and economic development.</li>
-                        <li>To inspire leadership, inclusivity, and innovation in our community.</li>
-                        <li>To strengthen the role of PDP in building a united and thriving Nigeria.</li>
-                    </ul>
-                </div>
-                <div class="mv-card vision-card">
-                    <i class="fas fa-eye"></i>
-                    <h3>Our Vision</h3>
-                    <p>To build a generation of committed, united, and empowered youths who will drive positive transformation in Gombi LG and beyond.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+      <!-- 1. Chairman -->
+      <div class="bg-white rounded-xl shadow-md p-4 text-center">
+        <img src="CHAIRMAN_IMAGE_PATH.jpg" alt="Chairman" class="w-40 h-40 mx-auto object-cover rounded-full">
+        <h3 class="text-lg font-bold mt-4">Comrade Mu'awiya Sambo</h3>
+        <p class="text-sm text-gray-600">Chairman</p>
+      </div>
 
-    <!-- Programs Section -->
-    <section id="programs">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Programs</h2>
-            </div>
-            
-            <div class="program-filters">
-                <button class="filter-btn active" data-filter="all">All Programs</button>
-                <button class="filter-btn" data-filter="youth-forums">Youth Forums</button>
-                <button class="filter-btn" data-filter="trainings">Trainings</button>
-                <button class="filter-btn" data-filter="pdp-events">PDP Events</button>
-                <button class="filter-btn" data-filter="community-support">Community Support</button>
-            </div>
-            
-            <div class="programs-grid">
-                <!-- Sample Program 1 -->
-                <div class="program-card" data-category="youth-forums">
-                    <div class="program-img">
-                        <i class="fas fa-image fa-2x"></i>
-                        <p>Youth Forum Photo</p>
-                    </div>
-                    <div class="program-content">
-                        <span class="program-tag">Youth Forums</span>
-                        <h3>Youth Leadership Forum</h3>
-                        <p>Monthly discussions on leadership, governance, and youth participation in politics.</p>
-                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">View Details</a>
-                    </div>
-                </div>
-                
-                <!-- Sample Program 2 -->
-                <div class="program-card" data-category="trainings">
-                    <div class="program-img">
-                        <i class="fas fa-image fa-2x"></i>
-                        <p>Training Photo</p>
-                    </div>
-                    <div class="program-content">
-                        <span class="program-tag">Trainings</span>
-                        <h3>Digital Skills Workshop</h3>
-                        <p>Empowering youth with digital literacy and technology skills for the modern economy.</p>
-                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">View Details</a>
-                    </div>
-                </div>
-                
-                <!-- Sample Program 3 -->
-                <div class="program-card" data-category="pdp-events">
-                    <div class="program-img">
-                        <i class="fas fa-image fa-2x"></i>
-                        <p>PDP Event Photo</p>
-                    </div>
-                    <div class="program-content">
-                        <span class="program-tag">PDP Events</span>
-                        <h3>PDP Youth Rally</h3>
-                        <p>Mobilizing youth support for PDP and its candidates in upcoming elections.</p>
-                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">View Details</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Admin Upload Section -->
-            <div class="admin-section">
-                <h3 style="text-align: center; margin-bottom: 30px; color: var(--pdp-blue);">
-                    <i class="fas fa-upload"></i> Upload New Program
-                </h3>
-                <div class="admin-form">
-                    <form id="programUploadForm">
-                        <div class="form-group">
-                            <label for="programTitle">Program Title</label>
-                            <input type="text" id="programTitle" class="form-control" placeholder="Enter program title" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="programDescription">Program Description</label>
-                            <textarea id="programDescription" class="form-control" placeholder="Describe the program" required></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="programCategory">Category</label>
-                            <select id="programCategory" class="form-control" required>
-                                <option value="">Select Category</option>
-                                <option value="youth-forums">Youth Forums</option>
-                                <option value="trainings">Trainings</option>
-                                <option value="pdp-events">PDP Events</option>
-                                <option value="community-support">Community Support</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="programImage">Program Image URL</label>
-                            <input type="text" id="programImage" class="form-control" placeholder="Paste image URL from imgbb.com">
-                            <small style="color: #666;">Upload your image to <a href="https://imgbb.com" target="_blank">imgbb.com</a> and paste the Direct Link here</small>
-                        </div>
-                        
-                        <button type="submit" class="btn" style="width: 100%;">
-                            <i class="fas fa-plus-circle"></i> Add Program
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+      <!-- 2. Organizing Secretary -->
+      <div class="bg-white rounded-xl shadow-md p-4 text-center">
+        <img src="ORGANIZING_SECRETARY_IMAGE_PATH.jpg" alt="Organizing Secretary" class="w-40 h-40 mx-auto object-cover rounded-full">
+        <h3 class="text-lg font-bold mt-4">Abubakr Abdullahi</h3>
+        <p class="text-sm text-gray-600">Organizing Secretary</p>
+      </div>
 
-    <!-- Gallery Section -->
-    <section class="gallery" id="gallery">
-        <div class="container">
-            <div class="section-title">
-                <h2>Gallery</h2>
-            </div>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <i class="fas fa-image fa-3x"></i>
-                    <p>Event Photo 1</p>
-                </div>
-                
-                <div class="gallery-item">
-                    <i class="fas fa-image fa-3x"></i>
-                    <p>Event Photo 2</p>
-                </div>
-                
-                <div class="gallery-item">
-                    <i class="fas fa-image fa-3x"></i>
-                    <p>Event Photo 3</p>
-                </div>
-                
-                <div class="gallery-item">
-                    <i class="fas fa-image fa-3x"></i>
-                    <p>Event Photo 4</p>
-                </div>
-            </div>
-        </div>
-    </section>
+      <!-- 3. Secretary -->
+      <div class="bg-white rounded-xl shadow-md p-4 text-center">
+        <img src="SECRETARY_IMAGE_PATH.jpg" alt="Secretary" class="w-40 h-40 mx-auto object-cover rounded-full">
+        <h3 class="text-lg font-bold mt-4">Name Here</h3>
+        <p class="text-sm text-gray-600">Secretary</p>
+      </div>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-            </div>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <p>We'd love to hear from you. Reach out to us for inquiries, collaborations, or to join our movement.</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Location</h4>
-                                <p>Adamawa State, Gombi LG, Yola Road ahead NECAS office</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <p>zyaulhaqdanladi@gmail.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Phone</h4>
-                                <p>+234 903 917 2805</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="map-container">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.218990724098!2d12.450031174852882!3d9.042371091079673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10fc6e5d23b59a3d%3A0x5b6d42f01b59b0a0!2sAdamawa%20State%2C%20Nigeria!5e0!3m2!1sen!2s!4v1689876543210!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-                
-                <div class="contact-form">
-                    <h3>Send Us a Message</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" class="form-control" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn" style="width: 100%;">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+      <!-- 4. Co-ordinator -->
+      <div class="bg-white rounded-xl shadow-md p-4 text-center">
+        <img src="COORDINATOR_IMAGE_PATH.jpg" alt="Co-ordinator" class="w-40 h-40 mx-auto object-cover rounded-full">
+        <h3 class="text-lg font-bold mt-4">Name Here</h3>
+        <p class="text-sm text-gray-600">Co-ordinator</p>
+      </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-col">
-                    <div class="logo">
-                        <div class="logo-img">
-                            <div class="custom-logo">
-                                <div class="eagle">
-                                    <i class="fas fa-dove"></i>
-                                </div>
-                                <div class="handshake">
-                                    <i class="fas fa-handshake"></i>
-                                </div>
-                                <div class="pym-text">PYM</div>
-                            </div>
-                        </div>
-                        <div class="logo-text">PDP YOUTHS MOBILIZATION<br><span>GOMBI PYM</span></div>
-                    </div>
-                    <p style="margin-top: 15px;">United We Rise, United We Thrive. Empowering the youth of Gombi for a better tomorrow.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#mission">Mission & Vision</a></li>
-                        <li><a href="#programs">Programs</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Our Programs</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Youth Forums</a></li>
-                        <li><a href="#">Skills Training</a></li>
-                        <li><a href="#">PDP Events</a></li>
-                        <li><a href="#">Community Support</a></li>
-                        <li><a href="#">Leadership Development</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Contact Info</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> Gombi LG, Adamawa State</li>
-                        <li><i class="fas fa-envelope"></i> zyaulhaqdanladi@gmail.com</li>
-                        <li><i class="fas fa-phone"></i> +234 903 917 2805</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; 2023 PDP Youths Mobilization Gombi PYM. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+      <!-- 5. Treasurer -->
+      <div class="bg-white rounded-xl shadow-md p-4 text-center">
+        <img src="TREASURER_IMAGE_PATH.jpg" alt="Treasurer" class="w-40 h-40 mx-auto object-cover rounded-full">
+        <h3 class="text-lg font-bold mt-4">Name Here</h3>
+        <p class="text-sm text-gray-600">Treasurer</p>
+      </div>
 
-    <script>
-        // Mobile Menu Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-        
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            hamburger.innerHTML = navMenu.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-        
-        // Program Filtering
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const programCards = document.querySelectorAll('.program-card');
-        
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                const filter = btn.getAttribute('data-filter');
-                
-                programCards.forEach(card => {
-                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-        
-        // Program Upload Form
-        const programUploadForm = document.getElementById('programUploadForm');
-        
-        programUploadForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Get form values
-            const title = document.getElementById('programTitle').value;
-            const description = document.getElementById('programDescription').value;
-            const category = document.getElementById('programCategory').value;
-            const imageUrl = document.getElementById('programImage').value;
-            
-            // Create new program card
-            const programsGrid = document.querySelector('.programs-grid');
-            const newProgram = document.createElement('div');
-            newProgram.className = 'program-card';
-            newProgram.setAttribute('data-category', category);
-            
-            newProgram.innerHTML = `
-                <div class="program-img">
-                    ${imageUrl ? `<img src="${imageUrl}" alt="${title}">` : `<i class="fas fa-image fa-2x"></i><p>${title} Photo</p>`}
-                </div>
-                <div class="program-content">
-                    <span class="program-tag">${document.getElementById('programCategory').options[document.getElementById('programCategory').selectedIndex].text}</span>
-                    <h3>${title}</h3>
-                    <p>${description}</p>
-                    <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">View Details</a>
-                </div>
-            `;
-            
-            // Add new program to the grid
-            programsGrid.appendChild(newProgram);
-            
-            // Show success message
-            alert('Program added successfully!');
-            
-            // Reset form
-            programUploadForm.reset();
-        });
-        
-        // Contact Form Submission
-        const contactForm = document.getElementById('contactForm');
-        
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you! Your message has been received. We will contact you soon.');
-            contactForm.reset();
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+      <!-- 6. PRO I -->
+      <div class="bg-white rounded-xl shadow-md p-4 text-center">
+        <img src="PRO1_IMAGE_PATH.jpg" alt="P.R.O I" class="w-40 h-40 mx-auto object-cover rounded-full">
+        <h3 class="text-lg font-bold mt-4">Name Here</h3>
+        <p class="text-sm text-gray-600">Public Relations Officer I</p>
+      </div>
+
+      <!-- 7. Women Leader -->
+      <div class="bg-white rounded-xl shadow-md p-4 text-center">
+        <img src="WOMEN_LEADER_IMAGE_PATH.jpg" alt="Women Leader" class="w-40 h-40 mx-auto object-cover rounded-full">
+        <h3 class="text-lg font-bold mt-4">Name Here</h3>
+        <p class="text-sm text-gray-600">Women Leader</p>
+      </div>
+
+      <!-- 8. Auditor I -->
+      <div class="bg-white rounded-xl shadow-md p-4 text-center">
+        <img src="AUDITOR1_IMAGE_PATH.jpg" alt="Auditor I" class="w-40 h-40 mx-auto object-cover rounded-full">
+        <h3 class="text-lg font-bold mt-4">Name Here</h3>
+        <p class="text-sm text-gray-600">Auditor I</p>
+      </div>
+
+      <!-- 9. PRO II -->
+      <div class="bg-white rounded-xl shadow-md p-4 text-center">
+        <img src="PRO2_IMAGE_PATH.jpg" alt="P.R.O II" class="w-40 h-40 mx-auto object-cover rounded-full">
+        <h3 class="text-lg font-bold mt-4">Name Here</h3>
+        <p class="text-sm text-gray-600">Public Relations Officer II</p>
+      </div>
+
+      <!-- 10. Youth Leader -->
+      <div class="bg-white rounded-xl shadow-md p-4 text-center">
+        <img src="YOUTH_LEADER_IMAGE_PATH.jpg" alt="Youth Leader" class="w-40 h-40 mx-auto object-cover rounded-full">
+        <h3 class="text-lg font-bold mt-4">Name Here</h3>
+        <p class="text-sm text-gray-600">Youth Leader</p>
+      </div>
+
+      <!-- 11. Women Leader (Duplicate Role) -->
+      <div class="bg-white rounded-xl shadow-md p-4 text-center">
+        <img src="WOMEN_LEADER2_IMAGE_PATH.jpg" alt="Women Leader 2" class="w-40 h-40 mx-auto object-cover rounded-full">
+        <h3 class="text-lg font-bold mt-4">Name Here</h3>
+        <p class="text-sm text-gray-600">Women Leader II</p>
+      </div>
+
+      <!-- 12. Media Director -->
+      <div class="bg-white rounded-xl shadow-md p-4 text-center">
+        <img src="MEDIA_DIRECTOR_IMAGE_PATH.jpg" alt="Media Director" class="w-40 h-40 mx-auto object-cover rounded-full">
+        <h3 class="text-lg font-bold mt-4">Name Here</h3>
+        <p class="text-sm text-gray-600">Media Director</p>
+      </div>
+
+      <!-- 13. Vice Chairman -->
+      <div class="bg-white rounded-xl shadow-md p-4 text-center">
+        <img src="VICE_CHAIRMAN_IMAGE_PATH.jpg" alt="Vice Chairman" class="w-40 h-40 mx-auto object-cover rounded-full">
+        <h3 class="text-lg font-bold mt-4">Name Here</h3>
+        <p class="text-sm text-gray-600">Vice Chairman</p>
+      </div>
+
+      <!-- 14. Assistant Secretary -->
+      <div class="bg-white rounded-xl shadow-md p-4 text-center">
+        <img src="ASSISTANT_SECRETARY_IMAGE_PATH.jpg" alt="Assistant Secretary" class="w-40 h-40 mx-auto object-cover rounded-full">
+        <h3 class="text-lg font-bold mt-4">Name Here</h3>
+        <p class="text-sm text-gray-600">Assistant Secretary</p>
+      </div>
+
+      <!-- 15. Financial Secretary -->
+      <div class="bg-white rounded-xl shadow-md p-4 text-center">
+        <img src="FINANCIAL_SECRETARY_IMAGE_PATH.jpg" alt="Financial Secretary" class="w-40 h-40 mx-auto object-cover rounded-full">
+        <h3 class="text-lg font-bold mt-4">Name Here</h3>
+        <p class="text-sm text-gray-600">Financial Secretary</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-green-700 text-white text-center py-4 mt-12">
+    <p>&copy; 2025 PDP Youths Mobilization – Gombi LG. All Rights Reserved.</p>
+  </footer>
+
 </body>
 </html>
